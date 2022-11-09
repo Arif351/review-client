@@ -6,7 +6,7 @@ const Service = ({ service }) => {
     const { title, coverImg, about, details, price, _id } = service;
     return (
         <div>
-            <div className="card w-96 bg-base-200 shadow-xl">
+            <div className="card w-96 bg-base-300 shadow-xl">
                 <figure>
                     <img src={coverImg} alt="" />
                     {/* <PhotoProvider>
@@ -24,14 +24,13 @@ const Service = ({ service }) => {
                     <p>
                         {
                             details.length > 100 ?
-                                <p>{details.slice(0, 100) + '...'} <Link><div className="badge badge-primary">Read More</div>
+                                <p>{details.slice(0, 100) + '...'} <Link to={`/checkout/${_id}`}><div className="badge badge-primary">Read More</div>
                                 </Link> </p> : <p>{details}</p>
                         }
                     </p>
                     <div className="card-actions justify-between">
 
-                        <Link to={`/checkout/${_id}`}><button className="badge badge-high--dark text-white">Pirce: ${price}</button></Link>
-
+                        <button className="badge badge-high--dark text-white">Pirce: ${price}</button>
                         <Link to={`/checkout/${_id}`}><div className="btn btn-outline text-center mt-5">View Details</div></Link>
                     </div>
                 </div>

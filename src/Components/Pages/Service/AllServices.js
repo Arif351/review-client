@@ -3,10 +3,10 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const AllServices = ({ eachService }) => {
-    const { title, coverImg, about, details, price, _id } = eachService;
+    const { title, coverImg, about, details, price, _id, rating, review_1, review_2 } = eachService;
     return (
         <div>
-            <div className="card w-96 bg-base-200 shadow-xl">
+            <div className="card w-96 bg-base-200 shadow-xl ">
                 <figure>
                     <img src={coverImg} alt="" />
                     {/* <PhotoProvider>
@@ -24,13 +24,13 @@ const AllServices = ({ eachService }) => {
                     <p>
                         {
                             details.length > 100 ?
-                                <p>{details.slice(0, 100) + '...'} <Link><div className="badge badge-primary">Read More</div>
+                                <p>{details.slice(0, 100) + '...'} <Link to={`/checkout/${_id}`}><div className="badge badge-primary">Read More</div>
                                 </Link> </p> : <p>{details}</p>
                         }
                     </p>
                     <div className="card-actions justify-between">
 
-                        <Link to={`/checkout/${_id}`}><button className="badge badge-high--dark text-white">Pirce: ${price}</button></Link>
+                        <button className="badge badge-high--dark text-white">Pirce: ${price}</button>
 
                         <Link to={`/checkout/${_id}`}><button className="btn btn-outline mt-5">View Details</button></Link>
                     </div>

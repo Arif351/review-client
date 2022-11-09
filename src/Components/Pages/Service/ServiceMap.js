@@ -10,7 +10,7 @@ const ServiceMap = () => {
     }, [])
 
     return (
-        <div className='mx-5 my-7'>
+        <div className='mx-2 lg:ml-8 my-7'>
             <div className='text-center my-12'>
                 <h1 className='text-neutral text-3xl font-semibold'>Hey, Your Tax Guidance in Here!</h1>
                 <p className='text-neutral font-semibold'>Set your paper, calculator and take a easy solution of your tax!</p>

@@ -3,6 +3,7 @@ import Cover from "../Layout/Cover/Cover";
 import Home from "../Layout/Home/Home";
 import Main from "../Layout/Main/Main";
 import DetailsService from "../Pages/DetailsService/DetailsService";
+import Review from "../Pages/Review/Review";
 import AllServices from "../Pages/Service/AllServices";
 import ServiceMap from "../Pages/Service/ServiceMap";
 
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 element: <DetailsService></DetailsService>,
+                loader: ({ params }) => fetch(`http://localhost:5000/serviceDetails/${params.id}`)
+            },
+            {
+                path: '/review/:id',
+                element: <Review></Review>,
                 loader: ({ params }) => fetch(`http://localhost:5000/serviceDetails/${params.id}`)
             }
         ]
