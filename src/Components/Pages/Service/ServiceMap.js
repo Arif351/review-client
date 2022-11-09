@@ -15,7 +15,7 @@ const ServiceMap = () => {
                 <h1 className='text-neutral text-3xl font-semibold'>Hey, Your Tax Guidance in Here!</h1>
                 <p className='text-neutral font-semibold'>Set your paper, calculator and take a easy solution of your tax!</p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     allservices.map(eachService => <AllServices
                         key={eachService._id}
