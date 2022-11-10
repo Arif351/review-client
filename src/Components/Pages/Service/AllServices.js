@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 import 'react-photo-view/dist/react-photo-view.css';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const AllServices = ({ eachService }) => {
     const { title, coverImg, about, details, price, _id, rating, review_1, review_2 } = eachService;
+    const { loading } = useContext(AuthContext);
+    if (loading) {
+        return <button className="btn loading justify-center">loading</button>
+    }
     return (
         <div>
             <PhotoProvider>

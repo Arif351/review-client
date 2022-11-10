@@ -10,7 +10,7 @@ const DetailsService = () => {
 
     const { title, coverImg, about, details, price, rating, _id, review_1, review_2 } = useLoaderData();
     if (loading) {
-        return <button className="btn loading">loading</button>
+        return <button className="btn loading justify-center">loading</button>
     }
 
     return (
