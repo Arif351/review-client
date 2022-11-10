@@ -1,8 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
+import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
+
     const { customer, logout } = useContext(AuthContext);
 
     return (
@@ -12,10 +14,12 @@ const Navbar = () => {
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal p-0">
-                    <li> <Link to='/home'>Home</Link> </li>
+                    <li> <Link to='/'>Home</Link> </li>
                     {
                         customer && customer?.uid ?
-                            <li><Link onClick={logout}>Sign Out</Link></li>
+                            <>
+                                <li><Link>My Reviews</Link></li>
+                                <li><Link onClick={logout}>Sign Out</Link></li></>
                             :
                             <>
                                 <li> <Link to='/login'>Login</Link> </li>
@@ -25,9 +29,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="dropdown dropdown-end">
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        <img src="https://placeimg.com/80/80/people" alt='' />
+                <label tabIndex={0} className="btn btn-ghost btn-circle">
+                    <div className="w-12 rounded-full">
+                        {/* <img src={customer?.photoURL} alt='' /> */}
+                        {
+                            customer?.photoURL ? <img src={customer?.photoURL} alt='' /> :
+                                <FaUserCircle ></FaUserCircle>
+                        }
                     </div>
                 </label>
             </div>

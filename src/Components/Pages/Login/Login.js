@@ -1,12 +1,14 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { login } = useContext(AuthContext);
+    const { login, google } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/home';
+    const from = location.state?.from?.pathname || '/';
 
     const handleLogin = event => {
         event.preventDefault();
@@ -17,12 +19,26 @@ const Login = () => {
         login(email, password)
             .then(result => {
                 const user = result.user;
+                Swal.fire("You have succesfully logged in!", "Thank You");
+                navigate(from, { replace: true })
                 console.log(user);
                 form.reset();
-                navigate(from, { replace: true })
+
             })
             .catch(error => console.error(error));
     }
+
+    const handleGoogle = () => {
+        google(googleProvider)
+            .then(result => {
+                const user = result.user;
+                Swal.fire("You have succesfully logged in!", "Thank You");
+                navigate(from, { replace: true });
+                console.log(user);
+            })
+            .catch(err => console.error(err));
+    }
+    const googleProvider = new GoogleAuthProvider();
 
     return (
         <div>
@@ -53,8 +69,8 @@ const Login = () => {
                                 <div className="form-control mt-6">
                                     <button className="btn btn-outline">Login</button>
                                 </div>
-                                <h1 className='text-lg font-semibold my-2 text-orange-400-400'>Login with: <Link className='text-sky-400 hover:text-sky-600' to='/signup'>Google</Link> </h1>
-                                <h1 className='text-lg font-semibold my-2 text-orange-400-400'>New in this Website? <Link className='text-sky-400 hover:text-sky-600' to='/signup'>Signup</Link> </h1>
+                                <h1 className='text-lg font-semibold my-2 text-orange-400-400'>Login with: <Link onClick={handleGoogle} className='text-sky-400 hover:text-sky-600' to='/signup'>Google</Link> </h1>
+                                <h1 className='text-lg font-semibold my-2 text-orange-400-400'>New in this Website? <Link className='text-sky-400 hover:text-sky-600'>Signup</Link> </h1>
                             </div>
                         </form>
                     </div>

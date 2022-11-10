@@ -12,6 +12,7 @@ const Review = () => {
         const name = `${form.name.value}`
         const email = customer?.email;
         const review = form.review.value;
+        console.log(name, email, review);
 
         const customerReview = {
             service: _id,
@@ -43,26 +44,24 @@ const Review = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" name='name' readOnly defaultValue={customer?.name} className="input input-bordered" />
+                        <input type="text" name='name' className="input input-bordered text-white" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Photo Url</span>
                         </label>
-                        <input type="text" name='url' readOnly defaultValue={customer?.url} className="input input-bordered" />
+                        <input type="url" name='url' className="input input-bordered text-white" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" name='email' defaultValue={customer?.email} className="input input-bordered" readOnly />
+                        <input type="email" name='email' defaultValue={customer?.email} className="input input-bordered" />
                     </div>
                 </div>
-                <textarea name='review' className="textarea textarea-info w-9/12 my-4 mx-5" placeholder="Write your Review"></textarea>
+                <textarea name='review' className="textarea textarea-info w-9/12 my-4 mx-5" placeholder="Write your Review" required></textarea>
                 <Link><button className="btn btn-outline my-4 ml-5">Give review</button></Link>
             </form>
-
-
         </div>
     );
 };
