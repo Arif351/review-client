@@ -3,9 +3,12 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const DetailsService = () => {
-    const { customer } = useContext(AuthContext);
+    const { customer, loading } = useContext(AuthContext);
 
     const { title, coverImg, about, details, price, rating, _id, review_1, review_2 } = useLoaderData();
+    if (loading) {
+        return <button className="btn loading">loading</button>
+    }
 
     return (
         <div data-theme="dracula" className="card card-compact w-2/4 bg-base-100 shadow-xl mx-auto my-12">

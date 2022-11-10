@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation()
 
     if (loading) {
-        return
+        return <button className="btn loading">loading</button>
     }
     if (customer && customer?.uid) {
         return children;
