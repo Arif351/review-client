@@ -1,3 +1,11 @@
+<!-- 5 bullet points of this project -->
+# SETUP project by react, firebase, react-router-dom, Mongodb, node.js, etc
+## Complete google, email, password authentication system
+### backend data loaded
+#### display data on card and Blog added.
+##### deploy on express.js
+<!-- ---------------------------- -->
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
