@@ -9,8 +9,8 @@ const Review = () => {
     const handleReview = (e) => {
         e.prvevntDefault();
         const form = e.target;
-        const name = `${form.name.value}`
-        const email = customer?.email;
+        const name = form.customer?.name;
+        const email = form.customer?.email;
         const review = form.review.value;
         console.log(name, email, review);
 
@@ -18,9 +18,9 @@ const Review = () => {
             service: _id,
             serviceName: title,
             email,
-            name,
             review
         }
+
 
         fetch('http://localhost:5000/reviews', {
             method: 'POST',

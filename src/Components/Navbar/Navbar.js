@@ -15,6 +15,7 @@ const Navbar = () => {
             <div className="flex-none">
                 <ul className="menu menu-horizontal p-0">
                     <li> <Link to='/'>Home</Link> </li>
+                    <li><Link to='/blog'>Blog</Link></li>
                     {
                         customer && customer?.uid ?
                             <>
@@ -33,7 +34,8 @@ const Navbar = () => {
                     <div className="w-12 rounded-full">
                         {/* <img src={customer?.photoURL} alt='' /> */}
                         {
-                            customer?.photoURL ? <img src={customer?.photoURL} alt='' /> :
+                            customer && customer?.photoURL ?
+                                <img src={customer?.photoURL} alt='' /> :
                                 <FaUserCircle ></FaUserCircle>
                         }
                     </div>

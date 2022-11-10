@@ -41,13 +41,16 @@ const DetailsService = () => {
 
                     </div>
                     <div className="card-actions justify-around my-5">
-                        <button className="btn btn-outline">Request for Service</button>
+
                         {
                             customer && customer?.email ?
-                                <Link to={`/review/${_id}`}><button className="btn btn-outline">Give us a review</button></Link> :
+                                <>
+                                    <Link><button className="btn btn-outline">Add to List</button></Link>
+                                    <Link to={`/review/${_id}`}><button className="btn btn-outline">Give us a review</button></Link>
+                                </> :
                                 <Link to='/login'><button className="btn btn-outline">Login to write your review</button></Link>
                         }
-                        {/* <Link to='/login'><button className="btn btn-outline">Give us a review</button></Link> */}
+                        {/* <Link to={`/review/${_id}`}><button className="btn btn-outline">Give us a review</button></Link> {`/checkout/${_id}`} */}
                     </div>
                 </div>
             </PhotoProvider>

@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Cover from "../Layout/Cover/Cover";
 import Home from "../Layout/Home/Home";
 import Main from "../Layout/Main/Main";
+import Blog from "../Pages/Blog/Blog";
+import Checkout from "../Pages/Checkout/Checkout";
 import DetailsService from "../Pages/DetailsService/DetailsService";
 import Login from "../Pages/Login/Login";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
@@ -27,12 +28,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
-
             },
             {
                 path: '/signup',
                 element: <Signup></Signup>
-
             },
             {
                 path: '/checkout/:id',
@@ -43,7 +42,20 @@ const router = createBrowserRouter([
                 path: '/review/:id',
                 element: <PrivateRoute><Review></Review></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/serviceDetails/${params.id}`)
+            },
+            {
+                path: '/checkout/:id',
+                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/serviceDetails/${params.id}`)
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
+            // {
+            //     path: '/myreviews',
+            //     element: <PrivateRoute><Review></Review></PrivateRoute>
+            // }
         ]
     }
 ]);
