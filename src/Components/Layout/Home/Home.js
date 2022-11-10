@@ -8,7 +8,7 @@ const Home = () => {
     const [services, setServices] = useState([]);
     const { loading } = useContext(AuthContext)
     useEffect(() => {
-        fetch('https://account-20cf4.web.app/services')
+        fetch('https://account-server.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
 

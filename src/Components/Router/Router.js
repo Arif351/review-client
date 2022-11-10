@@ -36,17 +36,17 @@ const router = createBrowserRouter([
             {
                 path: '/checkout/:id',
                 element: <DetailsService></DetailsService>,
-                loader: ({ params }) => fetch(`https://account-20cf4.web.app/serviceDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://account-server.vercel.app/serviceDetails/${params.id}`)
             },
             {
                 path: '/review/:id',
                 element: <PrivateRoute><Review></Review></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://account-20cf4.web.app/serviceDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://account-server.vercel.app/serviceDetails/${params.id}`)
             },
             {
                 path: '/checkout/:id',
                 element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://account-20cf4.web.app/serviceDetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://account-server.vercel.app/serviceDetails/${params.id}`)
             },
             {
                 path: '/blog',
