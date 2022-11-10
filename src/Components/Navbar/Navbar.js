@@ -10,8 +10,8 @@ const Navbar = () => {
             <div className="flex-none">
                 <ul className="menu menu-horizontal p-0">
                     <li> <Link to='/home'>Home</Link> </li>
-                    <li> <Link to='/home'>Login</Link> </li>
-                    <li> <Link to='/home'>Sign up</Link> </li>
+                    <li> <Link to='/login'>Login</Link> </li>
+                    <li> <Link to='/signup'>Sign up</Link> </li>
                 </ul>
             </div>
             <div className="dropdown dropdown-end">

@@ -16,12 +16,17 @@ const DetailsService = () => {
                     <button className="badge badge-primary text-white justify-center">Ratings: {rating}</button>
                 </div>
                 <hr />
+                <div className="flex flex-col w-full">
+                    <h1 className='text-center text-2xl my-3'>Customer's Reviews:</h1>
+                    <div className="grid h-48 card bg-base-300 rounded-box place-items-center">{review_1}</div>
+                    <div className="divider"></div>
+                    <div className="grid h-48 card bg-base-300 rounded-box place-items-center">{review_2}</div>
+                </div>
                 <div className="card-actions justify-around mt-3">
                     <button className="btn btn-outline">Request for Service</button>
-                    <Link to={`/review/${_id}`}><button className="btn btn-outline">SEE Reviews</button></Link>
+                    <Link to='/login'><button className="btn btn-outline">Give us a review</button></Link>
                 </div>
                 <div>
-
                 </div>
             </div>
         </div >
