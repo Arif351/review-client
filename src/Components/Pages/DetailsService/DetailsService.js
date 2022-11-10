@@ -16,7 +16,7 @@ const DetailsService = () => {
     return (
         <div>
             <PhotoProvider>
-                <div data-theme="dracula" className="card card-compact w-2/4 bg-base-100 shadow-xl mx-auto my-12">
+                <div data-theme="dracula" className="card card-compact w-3/4 bg-base-100 shadow-xl my-12">
                     <figure>
                         <PhotoView src={coverImg}>
                             <img src={coverImg} alt="" />

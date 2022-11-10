@@ -4,7 +4,7 @@ import AllServices from './AllServices';
 const ServiceMap = () => {
     const [allservices, setAllservices] = useState([]);
     useEffect(() => {
-        fetch('https://account-server.vercel.app/allServices')
+        fetch('https://account-20cf4.web.app/allServices')
             .then(res => res.json())
             .then(data => setAllservices(data))
     }, [])

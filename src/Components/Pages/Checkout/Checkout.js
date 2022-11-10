@@ -20,7 +20,7 @@ const Checkout = () => {
             customer: name, email, review
         }
         console.log(order);
-        fetch('https://account-server.vercel.app/request', {
+        fetch('https://account-20cf4.web.app/request', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

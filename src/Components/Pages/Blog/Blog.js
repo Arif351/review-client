@@ -3,7 +3,7 @@ import React from 'react';
 const Blog = () => {
     return (
         <div>
-            <div data-theme="dracula" className="card w-10/12 bg-base-100 shadow-xl mx-auto my-6">
+            <div data-theme="dracula" className="card w-11/12 bg-base-100 shadow-xl mx-auto my-6">
                 <div className="card-body">
                     <h1 className='text-center text-3xl my-3 font-semibold'>Difference between SQL and NoSQL?</h1>
                     <hr />
@@ -20,7 +20,7 @@ const Blog = () => {
                     </p>
                 </div>
             </div>
-            <div data-theme="dracula" className="card w-10/12 bg-base-100 shadow-xl mx-auto my-6">
+            <div data-theme="dracula" className="card w-11/12 bg-base-100 shadow-xl mx-auto my-6">
                 <div className="card-body">
                     <div className="card-actions">
                     </div>
@@ -42,7 +42,7 @@ const Blog = () => {
                     </p>
                 </div>
             </div>
-            <div data-theme="dracula" className="card w-10/12 bg-base-100 shadow-xl mx-auto my-6">
+            <div data-theme="dracula" className="card w-11/12 bg-base-100 shadow-xl mx-auto my-6">
                 <div className="card-body">
                     <div className="card-actions">
                     </div>
@@ -67,7 +67,7 @@ const Blog = () => {
                     </p>
                 </div>
             </div>
-            <div data-theme="dracula" className="card w-10/12 bg-base-100 shadow-xl mx-auto my-6">
+            <div data-theme="dracula" className="card w-11/12 bg-base-100 shadow-xl mx-auto my-6">
                 <div className="card-body">
                     <div className="card-actions">
                     </div>
