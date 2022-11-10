@@ -15,6 +15,7 @@ const Signup = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
             })
             .catch(error => console.error(error));
 
@@ -59,7 +60,9 @@ const Signup = () => {
                                 <div className="form-control mt-6">
                                     <button className="btn btn-outline">Sign Up</button>
                                 </div>
-                                <h1 className='text-lg font-semibold my-3 text-orange-400-400'>Already have an Account? <Link className='text-sky-400 hover:text-sky-600' to='/login'>Login</Link> </h1>
+                                <h1 className='text-lg font-semibold my-3 text-orange-400-400'>Already have an Account?
+                                    <Link className='text-sky-400 hover:text-sky-600' to='/login'>Login</Link>
+                                </h1>
                             </div>
                         </form>
                     </div>

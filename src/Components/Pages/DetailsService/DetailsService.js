@@ -26,41 +26,23 @@ const DetailsService = () => {
                     <div className="divider"></div>
                     <div className="grid h-32 card bg-base-300 rounded-box place-items-center">{review_2}</div>
                 </div>
-                <form>
-                    <div className="card-body">
-                        <h1 className="text-2xl font-bold text-center">Write Your Review</h1>
-                        <hr />
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Name</span>
-                            </label>
-                            <input type="text" name='name' defaultValue={customer?.name} className="input input-bordered" />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Photo Url</span>
-                            </label>
-                            <input type="text" name='url' defaultValue={customer?.url} className="input input-bordered" />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input type="email" name='email' defaultValue={customer?.email} className="input input-bordered" required />
-                        </div>
-                    </div>
-                    {/* <input type="text" name='text' defaultValue={customer?.name} className="mb-2 input textarea-info w-6/12 max-w-xs" /> <br />
-                    <input type="email" name='email' defaultValue={customer?.email} className="mb-2 input textarea-info w-6/12 max-w-xs" /> */}
-                </form>
-                <textarea className="textarea textarea-info  my-4" placeholder="Write your Review"></textarea>
-
-                <div className="card-actions justify-around mt-3">
-                    <button className="btn btn-outline">Request for Service</button>
-                    <Link to='/login'><button className="btn btn-outline">Give us a review</button></Link>
-                </div>
 
             </div>
-        </div >
+            <div className="card-actions justify-around my-5">
+                <button className="btn btn-outline">Request for Service</button>
+                {
+                    customer && customer?.email ?
+                        <Link to={`/review/${_id}`}><button className="btn btn-outline">Give us a review</button></Link> :
+                        <Link to='/login'><button className="btn btn-outline">Login to write your review</button></Link>
+                }
+
+
+
+
+
+                {/* <Link to='/login'><button className="btn btn-outline">Give us a review</button></Link> */}
+            </div>
+        </div>
     );
 };
 
