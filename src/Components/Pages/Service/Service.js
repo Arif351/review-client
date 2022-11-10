@@ -30,7 +30,7 @@ const Service = ({ service }) => {
                         </p>
                         <div className="card-actions justify-between">
 
-                            <button className="badge badge-high--dark text-white">Pirce: ${price}</button>
+                            <button className="badge badge-high--dark text-white">Price: ${price}</button>
                             <Link to={`/checkout/${_id}`}><div className="btn btn-outline text-center mt-5">View Details</div></Link>
                         </div>
                     </div>

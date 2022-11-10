@@ -35,7 +35,7 @@ const AllServices = ({ eachService }) => {
                         </p>
                         <div className="card-actions justify-between">
 
-                            <button className="badge badge-high--dark text-white">Pirce: ${price}</button>
+                            <button className="badge badge-high--dark text-white">Price: ${price}</button>
 
                             <Link to={`/checkout/${_id}`}><button className="btn btn-outline mt-5">View Details</button></Link>
                         </div>

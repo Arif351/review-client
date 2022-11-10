@@ -28,7 +28,7 @@ const DetailsService = () => {
                         <p className='mb-3'>{details}</p>
                         <hr />
                         <div className="card-actions justify-around my-2">
-                            <button className="badge badge-high--dark text-white justify-center">Pirce: ${price}</button>
+                            <button className="badge badge-high--dark text-white justify-center">Price: ${price}</button>
                             <button className="badge badge-primary text-white justify-center">Ratings: {rating}</button>
                         </div>
                         <hr />
